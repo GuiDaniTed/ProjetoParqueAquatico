@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminFuncionarios20Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminAnimais27Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,62 +25,44 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "funcionarios";
+			$this->table = "animais";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome","name"=>"nome"];
-			$this->col[] = ["label"=>"ID","name"=>"id"];
-			$this->col[] = ["label"=>"Cargo","name"=>"cargo"];
+			$this->col[] = ["label"=>"ID do animal","name"=>"id"];
+			$this->col[] = ["label"=>"Nome do animal","name"=>"nome"];
+			$this->col[] = ["label"=>"Veterinário","name"=>"veterinario"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;O'];
-			$this->form[] = ['label'=>'Data de Nascimento','name'=>'dataNascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:1|max:28','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'required|min:1|max:4','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:funcionarios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
-			$this->form[] = ['label'=>'Cargo','name'=>'cargo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Gerente;Segurança;Caixa;Faxineiro(a);Veterinário(a);Porteiro;Salva-Vidas;Cozinheiro(a);Secretário(a)'];
-			$this->form[] = ['label'=>'Salário','name'=>'salario','type'=>'money','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jornada Entrada','name'=>'jornadaEntrada','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jornada Saída','name'=>'jornadaSaida','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número Carteira Trabalho','name'=>'NumeroCarteiraTrab','type'=>'text','validation'=>'required|min:1|max:12','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número Série Carteira Trabalho','name'=>'NumeroSerieCTrab','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CRMV','name'=>'CRMV','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Macho;Femea'];
+			$this->form[] = ['label'=>'Espécie','name'=>'especie','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Raça','name'=>'raca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Veterinário','name'=>'veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Veterinário','name'=>'id_veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Idade','name'=>'idade','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Filhote;Adulto;Idoso'];
+			$this->form[] = ['label'=>'Altura','name'=>'altura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
+			$this->form[] = ['label'=>'Largura','name'=>'largura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
+			$this->form[] = ['label'=>'Comprimento','name'=>'comprimento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
+			$this->form[] = ['label'=>'Alimentação','name'=>'alimentacao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;O'];
-			//$this->form[] = ['label'=>'Data de Nascimento','name'=>'dataNascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:1|max:28','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'required|min:1|max:4','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:funcionarios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
-			//$this->form[] = ['label'=>'Cargo','name'=>'cargo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Gerente;Segurança;Balconista;Faxineiro(a);Veterinário(a);Porteiro;Salva-Vidas;Cozinheiro(a);Secretário(a)'];
-			//$this->form[] = ['label'=>'Salário','name'=>'salario','type'=>'money','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jornada Entrada','name'=>'jornadaEntrada','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jornada Saída','name'=>'jornadaSaida','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número Carteira Trabalho','name'=>'NumeroCarteiraTrab','type'=>'text','validation'=>'required|min:1|max:12','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número Série Carteira Trabalho','name'=>'NumeroSerieCTrab','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CRMV','name'=>'CRMV','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Macho;Femea'];
+			//$this->form[] = ['label'=>'Espécie','name'=>'especie','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Raça','name'=>'raca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Veterinário','name'=>'veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Veterinário','name'=>'id_veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Idade','name'=>'idade','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Filhote;Adulto;Idoso'];
+			//$this->form[] = ['label'=>'Altura','name'=>'altura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Largura','name'=>'largura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Comprimento','name'=>'comprimento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Alimentação','name'=>'alimentacao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

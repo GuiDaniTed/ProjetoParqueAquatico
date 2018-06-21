@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminFuncionarios20Controller extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminLoja26Controller extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,62 +25,81 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "funcionarios";
+			$this->table = "loja";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome","name"=>"nome"];
-			$this->col[] = ["label"=>"ID","name"=>"id"];
-			$this->col[] = ["label"=>"Cargo","name"=>"cargo"];
+			$this->col[] = ["label"=>"ID da Loja","name"=>"id"];
+			$this->col[] = ["label"=>"ID do Gerente","name"=>"id_gerente"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;O'];
-			$this->form[] = ['label'=>'Data de Nascimento','name'=>'dataNascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:1|max:28','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'required|min:1|max:4','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:funcionarios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
-			$this->form[] = ['label'=>'Cargo','name'=>'cargo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Gerente;Segurança;Caixa;Faxineiro(a);Veterinário(a);Porteiro;Salva-Vidas;Cozinheiro(a);Secretário(a)'];
-			$this->form[] = ['label'=>'Salário','name'=>'salario','type'=>'money','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jornada Entrada','name'=>'jornadaEntrada','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jornada Saída','name'=>'jornadaSaida','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número Carteira Trabalho','name'=>'NumeroCarteiraTrab','type'=>'text','validation'=>'required|min:1|max:12','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número Série Carteira Trabalho','name'=>'NumeroSerieCTrab','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'CRMV','name'=>'CRMV','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome do Gerente','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Gerente','name'=>'id_gerente','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome do Caixa 1','name'=>'caixa1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Caixa 1','name'=>'id_caixa1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome do Caixa 2','name'=>'caixa2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Caixa 2','name'=>'id_caixa2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome do Cozinheiro 1','name'=>'cozinheiro1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Cozinheiro 1','name'=>'id_cozinheiro1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome do Cozinheiro 2','name'=>'cozinheiro2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID do Cozinheiro 2','name'=>'id_cozinheiro2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 1','name'=>'produto1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 1','name'=>'preco1','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 2','name'=>'produto2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 2','name'=>'preco2','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 3','name'=>'produto3','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 3','name'=>'preco3','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 4','name'=>'produto4','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 4','name'=>'preco4','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 5','name'=>'produto5','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 5','name'=>'preco5','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 6','name'=>'produto6','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 6','name'=>'preco6','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto7','name'=>'produto7','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 7','name'=>'preco7','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 8','name'=>'produto8','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 8','name'=>'preco8','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 9','name'=>'produto9','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 9','name'=>'preco9','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Produto 10','name'=>'produto10','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço do 10','name'=>'preco10','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'M;F;O'];
-			//$this->form[] = ['label'=>'Data de Nascimento','name'=>'dataNascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:1|max:28','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'required|min:1|max:4','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:funcionarios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
-			//$this->form[] = ['label'=>'Cargo','name'=>'cargo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Gerente;Segurança;Balconista;Faxineiro(a);Veterinário(a);Porteiro;Salva-Vidas;Cozinheiro(a);Secretário(a)'];
-			//$this->form[] = ['label'=>'Salário','name'=>'salario','type'=>'money','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jornada Entrada','name'=>'jornadaEntrada','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jornada Saída','name'=>'jornadaSaida','type'=>'text','validation'=>'required|min:1|max:5','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número Carteira Trabalho','name'=>'NumeroCarteiraTrab','type'=>'text','validation'=>'required|min:1|max:12','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número Série Carteira Trabalho','name'=>'NumeroSerieCTrab','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'CRMV','name'=>'CRMV','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome do Gerente','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Gerente','name'=>'id_gerente','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome do Caixa 1','name'=>'caixa1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Caixa 1','name'=>'id_caixa1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome do Caixa 2','name'=>'caixa2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Caixa 2','name'=>'id_caixa2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome do Cozinheiro 1','name'=>'cozinheiro1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Cozinheiro 1','name'=>'id_cozinheiro1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nome do Cozinheiro 2','name'=>'cozinheiro2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID do Cozinheiro 2','name'=>'id_cozinheiro2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 1','name'=>'produto1','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 1','name'=>'preco1','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 2','name'=>'produto2','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 2','name'=>'preco2','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 3','name'=>'produto3','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 3','name'=>'preco3','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 4','name'=>'produto4','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 4','name'=>'preco4','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 5','name'=>'produto5','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 5','name'=>'preco5','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 6','name'=>'produto6','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 6','name'=>'preco6','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto7','name'=>'produto7','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 7','name'=>'preco7','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 8','name'=>'produto8','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 8','name'=>'preco8','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 9','name'=>'produto9','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 9','name'=>'preco9','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Produto 10','name'=>'produto10','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço do 10','name'=>'preco10','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
