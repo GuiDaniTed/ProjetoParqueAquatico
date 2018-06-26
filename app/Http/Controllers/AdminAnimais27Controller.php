@@ -32,7 +32,7 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"ID do animal","name"=>"id"];
 			$this->col[] = ["label"=>"Nome do animal","name"=>"nome"];
-			$this->col[] = ["label"=>"Veterinário","name"=>"veterinario"];
+			$this->col[] = ["label"=>"Veterinário","name"=>"nome_veterinario"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -41,13 +41,14 @@
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Macho;Femea'];
 			$this->form[] = ['label'=>'Espécie','name'=>'especie','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Raça','name'=>'raca','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Veterinário','name'=>'veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Veterinário','name'=>'nome_veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'ID do Veterinário','name'=>'id_veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Idade','name'=>'idade','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Filhote;Adulto;Idoso'];
 			$this->form[] = ['label'=>'Altura','name'=>'altura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
 			$this->form[] = ['label'=>'Largura','name'=>'largura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
 			$this->form[] = ['label'=>'Comprimento','name'=>'comprimento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
 			$this->form[] = ['label'=>'Alimentação','name'=>'alimentacao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Saude','name'=>'saude','type'=>'select','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Estável;Tratamento'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -59,10 +60,11 @@
 			//$this->form[] = ['label'=>'Veterinário','name'=>'veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'ID do Veterinário','name'=>'id_veterinario','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Idade','name'=>'idade','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Filhote;Adulto;Idoso'];
-			//$this->form[] = ['label'=>'Altura','name'=>'altura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Largura','name'=>'largura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Comprimento','name'=>'comprimento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Altura','name'=>'altura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
+			//$this->form[] = ['label'=>'Largura','name'=>'largura','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
+			//$this->form[] = ['label'=>'Comprimento','name'=>'comprimento','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','help'=>'centímetros'];
 			//$this->form[] = ['label'=>'Alimentação','name'=>'alimentacao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Saude','name'=>'saude','type'=>'select','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Estável;Tratamento'];
 			# OLD END FORM
 
 			/* 

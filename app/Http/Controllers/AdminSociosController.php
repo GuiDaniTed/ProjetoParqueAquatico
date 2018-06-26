@@ -41,7 +41,7 @@
 			$this->form[] = ['label'=>'Data de Nascimento','name'=>'dataNascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'required|min:1|max:28','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'RG','name'=>'rg','type'=>'text','validation'=>'required|min:1|max:24','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Comprovante de Residencia','name'=>'comprovantederesidencia','type'=>'upload','validation'=>'required|min:1|max:255|image|image','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Comprovante de Residencia','name'=>'comprovantederesidencia','type'=>'upload','validation'=>'required|image','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
@@ -51,7 +51,7 @@
 			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:socios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
 			$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Comprovante de Renda','name'=>'comprovantederenda','type'=>'upload','validation'=>'required|min:1|max:255|image','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Comprovante de Renda','name'=>'comprovantederenda','type'=>'upload','validation'=>'required|image','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -64,14 +64,14 @@
 			//$this->form[] = ['label'=>'Comprovante de Residencia','name'=>'comprovantederesidencia','type'=>'upload','validation'=>'required|min:1|max:255|image|image','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Numero','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'required|min:1|max:50','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'E-mail','name'=>'email','type'=>'email','validation'=>'required|min:1|max:40|email|unique:socios','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
 			//$this->form[] = ['label'=>'Conta Bancaria','name'=>'contaBancaria','type'=>'text','validation'=>'required|min:1|max:30','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Comprovante de Renda','name'=>'comprovantederenda','type'=>'upload','validation'=>'required|min:1|max:255|image','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Comprovante de Renda','name'=>'comprovantederenda','type'=>'upload','validation'=>'required|image','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

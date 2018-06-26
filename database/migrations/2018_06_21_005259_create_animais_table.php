@@ -27,6 +27,7 @@ class CreateAnimaisTable extends Migration
 			$table->string('largura', 50);
 			$table->string('comprimento', 50);
 			$table->string('alimentacao', 50);
+			$table->string('saude', 50);
         });
     }
 
